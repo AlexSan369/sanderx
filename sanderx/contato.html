@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato - SanderX</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .navbar {
+            background: rgba(10, 10, 10, 0.95) !important;
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary-green) !important;
+            text-decoration: none;
+        }
+        .navbar-nav .nav-link {
+            color: var(--text-primary) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .navbar-nav .nav-link.active,
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-green) !important;
+        }
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover::after,
+        .navbar-nav .nav-link.active::after {
+            width: 100%;
+        }
+        .btn-talk {
+            background: var(--primary-green);
+            color: var(--dark-bg);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-talk:hover {
+            background: #00cc6a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+        .theme-toggle {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            margin-right: 1rem;
+        }
+        .theme-toggle:hover {
+            background: var(--primary-green);
+            color: var(--dark-bg);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"> Sander <i class="fas fa-code"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                style="border: none; background: var(--card-bg);">
+                <i class="fas fa-bars" style="color: var(--text-primary);"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#blog">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html#categorias">Categorias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contato.html">Contato</a>
+                    </li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="mailto:contato@sanderx.com" class="btn btn-talk">Vamos Conversar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="contact-main d-flex justify-content-center align-items-center" style="min-height: 100vh; background: var(--card-bg); padding-top: 90px;">
+        <!-- Contact Presentation Section -->
+        <section class="container mt-5 pt-5">
+            <div class="row justify-content-center align-items-center">
+                <div class="col-lg-7 text-center">
+                    <h2 class="section-title fade-in-up">Fale com o <span style="color: var(--primary-green);">SanderX</span></h2>
+                    <p class="lead text-secondary fade-in-up" style="max-width:600px;margin:1.5rem auto;">
+                        Tem dúvidas, sugestões, ideias ou quer apenas bater um papo sobre tecnologia, desenvolvimento ou IA? 
+                        Preencha o formulário abaixo ou envie um e-mail. Estou sempre aberto para novas conexões e parcerias!
+                    </p>
+                    <div id="sanderx-animation" style="margin:2rem auto 0; width:120px; height:120px;"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="container mb-5">
+            <form action="#" method="POST" class="mt-4" id="contactForm">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="message" class="form-label">Mensagem</label>
+                    <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-talk">Enviar</button>
+                <div id="form-success" class="mt-3 text-success" style="display:none;">Mensagem enviada com sucesso!</div>
+            </form>
+        </section>
+    </main>
+
+     <!-- Parcerias Section -->
+    <section style="background: var(--card-bg); padding: 3rem 0; border-radius: 20px; text-align: center; margin: 3rem 0 2rem 0;">
+        <div class="container">
+            <h3 style="color: var(--primary-green); margin-bottom: 1rem;">🤝 Parcerias</h3>
+            <h2 style="margin-bottom: 1rem;">Junte-se ao SanderX</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                Tem interesse em colaborar, divulgar sua marca ou criar projetos juntos? Entre em contato e vamos construir algo incrível no universo da tecnologia!
+            </p>
+            <div class="row justify-content-center align-items-center g-4">
+                <div class="col-12">
+                    <div id="parcerias-animation" style="margin:0 auto; width:160px; height:120px; display:flex; align-items:center; justify-content:center;">
+                        <!-- Animação JS será inserida aqui -->
+                    </div>
+                </div>
+            </div>
+            <a href="mailto:contato@sanderx.com" class="btn btn-talk mt-4">Quero ser parceiro</a>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section style="background: var(--card-bg); padding: 4rem 0; margin: 4rem 0; border-radius: 20px; text-align: center;">
+        <div class="container">
+            <h3 style="color: var(--primary-green); margin-bottom: 1rem;">📧 Newsletter</h3>
+            <h2 style="margin-bottom: 1rem;">Receba as últimas novidades</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                Inscreva-se para receber os melhores conteúdos sobre tecnologia diretamente no seu email.
+            </p>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="d-flex gap-2">
+                        <input type="email" class="form-control" placeholder="Seu melhor email" 
+                               style="border-radius: 25px; padding: 0.75rem 1.5rem; border: 1px solid var(--border-color); 
+                                      background: var(--dark-bg); color: var(--text-primary);">
+                        <button class="btn" style="background: var(--primary-green); color: var(--dark-bg); 
+                                                     border-radius: 25px; padding: 0.75rem 1.5rem; font-weight: 600;">
+                            Inscrever
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-brand">SanderX</div>
+                    <p class="text-secondary">Compartilhando conhecimento e inspiração sobre tecnologia e desenvolvimento.</p>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Blog</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Últimos Posts</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Categorias</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Tags</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Recursos</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Tutoriais</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Downloads</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Templates</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Suporte</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">FAQ</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Contato</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Legal</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Privacidade</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Termos</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border-color: var(--border-color); margin: 2rem 0 1rem;">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p style="color: var(--text-secondary); margin: 0;">&copy; 2025 TechBlog. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p style="color: var(--text-secondary); margin: 0;">Feito com <span style="color: var(--primary-green);">♥</span> e muito código</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+    // Animação simples JS para o avatar SanderX (pausa ao passar o mouse)
+    const anim = document.getElementById('sanderx-animation');
+    let floatInterval, up = true, hovering = false;
+    if (anim) {
+        anim.innerHTML = '<i class="fas fa-user-astronaut" style="font-size:4rem;color:var(--primary-green);transition:transform 0.5s;"></i>';
+        const icon = anim.firstChild;
+        function floatAnim() {
+            if (!hovering) {
+                icon.style.transform = up ? 'translateY(-10px)' : 'translateY(0)';
+                up = !up;
+            }
+        }
+        floatInterval = setInterval(floatAnim, 900);
+        anim.addEventListener('mouseenter', function() {
+            hovering = true;
+            icon.style.transform = 'rotate(-20deg) scale(1.2)';
+        });
+        anim.addEventListener('mouseleave', function() {
+            hovering = false;
+            icon.style.transform = 'rotate(0) scale(1)';
+        });
+    }
+
+    // Exemplo de envio de formulário sem recarregar a página
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('form-success').style.display = 'block';
+        this.reset();
+    });
+
+    // Theme toggle (igual ao index)
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle.querySelector('i');
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        if (savedTheme === 'light') {
+            themeIcon.className = 'fas fa-sun';
+            document.documentElement.style.setProperty('--primary-green', '#00cc6a');
+            document.documentElement.style.setProperty('--dark-bg', '#ffffff');
+            document.documentElement.style.setProperty('--card-bg', '#f8f9fa');
+            document.documentElement.style.setProperty('--text-primary', '#212529');
+            document.documentElement.style.setProperty('--text-secondary', '#6c757d');
+            document.documentElement.style.setProperty('--border-color', '#dee2e6');
+        }
+    }
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        if (newTheme === 'light') {
+            themeIcon.className = 'fas fa-sun';
+            document.documentElement.style.setProperty('--primary-green', '#00cc6a');
+            document.documentElement.style.setProperty('--dark-bg', '#ffffff');
+            document.documentElement.style.setProperty('--card-bg', '#f8f9fa');
+            document.documentElement.style.setProperty('--text-primary', '#212529');
+            document.documentElement.style.setProperty('--text-secondary', '#6c757d');
+            document.documentElement.style.setProperty('--border-color', '#dee2e6');
+        } else {
+            themeIcon.className = 'fas fa-moon';
+            document.documentElement.style.setProperty('--primary-green', '#00ff88');
+            document.documentElement.style.setProperty('--dark-bg', '#0a0a0a');
+            document.documentElement.style.setProperty('--card-bg', '#1a1a1a');
+            document.documentElement.style.setProperty('--text-primary', '#ffffff');
+            document.documentElement.style.setProperty('--text-secondary', '#b0b0b0');
+            document.documentElement.style.setProperty('--border-color', '#2a2a2a');
+        }
+    });
+
+    // Animação simples para logos de parceiros "flutuando"
+    const parceriasAnim = document.getElementById('parcerias-animation');
+    if (parceriasAnim) {
+        parceriasAnim.innerHTML = `
+            <img src="https://dummyimage.com/120x60/00ff88/0a0a0a&text=Parceiro+1" alt="Parceiro 1" style="max-width:70px; border-radius:10px; background:#fff; padding:8px; margin-right:10px; transition:transform 0.7s;">
+            <img src="https://dummyimage.com/120x60/00ff88/0a0a0a&text=Parceiro+2" alt="Parceiro 2" style="max-width:70px; border-radius:10px; background:#fff; padding:8px; transition:transform 0.7s;">
+        `;
+        const imgs = parceriasAnim.querySelectorAll('img');
+        let up = true;
+        setInterval(() => {
+            imgs[0].style.transform = up ? 'translateY(-12px) rotate(-6deg)' : 'translateY(0) rotate(0)';
+            imgs[1].style.transform = up ? 'translateY(12px) rotate(6deg)' : 'translateY(0) rotate(0)';
+            up = !up;
+        }, 900);
+    }
+    </script>
+</body>
+</html>

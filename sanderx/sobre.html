@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre | SanderX - O Cosmo Digital</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #00ff88;
+            --dark-bg: #0a0a0a;
+            --card-bg: #1a1a1a;
+            --text-primary: #ffffff;
+            --text-secondary: #b0b0b0;
+            --border-color: #2a2a2a;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        .navbar-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary-green) !important;
+            text-decoration: none;
+        }
+        .navbar-nav .nav-link {
+            color: var(--text-primary) !important;
+            font-weight: 500;
+            margin: 0 0.5rem;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-green) !important;
+        }
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary-green);
+            transition: width 0.3s ease;
+        }
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+        }
+        .btn-talk {
+            background: var(--primary-green);
+            color: var(--dark-bg);
+            border: none;
+            padding: 0.5rem 1.5rem;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .btn-talk:hover {
+            background: #00cc6a;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
+        }
+        .theme-toggle {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            color: var(--text-primary);
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        .theme-toggle:hover {
+            background: var(--primary-green);
+            color: var(--dark-bg);
+        }
+        .sobre-hero {
+            padding: 140px 0 60px;
+            background: linear-gradient(135deg, var(--dark-bg) 0%, #111 100%);
+            text-align: center;
+            position: relative;
+        }
+        .sobre-hero h1 {
+            font-weight: 800;
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .sobre-hero p {
+            color: var(--text-secondary);
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        .sobre-section {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin: 2rem 0;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+        }
+        .sobre-section h2 {
+            color: var(--primary-green);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        .sobre-section ul {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+        .sobre-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary-green), #00cc6a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: var(--dark-bg);
+            margin: 0 auto 1.5rem;
+        }
+        .footer {
+            background: var(--card-bg);
+            padding: 60px 0 30px;
+            border-top: 1px solid var(--border-color);
+        }
+        .footer-brand {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--primary-green);
+            margin-bottom: 1rem;
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: var(--dark-bg);
+            color: var(--text-primary);
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+        }
+        .social-link:hover {
+            background: var(--primary-green);
+            color: var(--dark-bg);
+            transform: translateY(-3px);
+        }
+        @media (max-width: 768px) {
+            .sobre-section { padding: 2rem 1rem; }
+            .sobre-hero { padding: 110px 0 40px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"> Sander <i class="fas fa-code"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border: none; background: var(--card-bg);">
+                <i class="fas fa-bars" style="color: var(--text-primary);"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Categorias</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                </ul>
+                <div class="d-flex align-items-center gap-3">
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon"></i>
+                    </button>
+                    <a href="mailto:contato@sanderx.com" class="btn btn-talk">Vamos Conversar</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Sobre -->
+    <section class="sobre-hero">
+        <div class="container">
+            <div class="sobre-avatar">
+                <i class="fas fa-user-astronaut"></i>
+            </div>
+            <h1>Sobre o SanderX</h1>
+            <p>
+                Bem-vindo ao SanderX, o Cosmo Digital! Aqui você encontra conteúdos sobre desenvolvimento, design, inteligência artificial e as tendências que estão moldando o futuro da tecnologia. 
+            </p>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section class="sobre-section">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="card h-100 text-center" style="background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border-color); box-shadow: 0 4px 24px rgba(0,0,0,0.10);">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <div style="font-size:2.5rem; color:var(--primary-green); margin-bottom: 1rem;">
+                            <i class="fas fa-user-astronaut"></i>
+                        </div>
+                        <h2 class="card-title mb-3" style="color: var(--primary-green); font-weight: 700;">Quem sou eu?</h2>
+                        <p class="card-text" style="color: var(--text-secondary);">
+                            Olá! Sou Sander, apaixonado por tecnologia, inovação e por compartilhar conhecimento. Com anos de experiência em desenvolvimento web, design de interfaces e inteligência artificial, criei este espaço para inspirar e ajudar outros devs e entusiastas digitais a explorarem o universo da tecnologia.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 text-center" style="background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border-color); box-shadow: 0 4px 24px rgba(0,0,0,0.10);">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <div style="font-size:2.5rem; color:var(--primary-green); margin-bottom: 1rem;">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h2 class="card-title mb-3" style="color: var(--primary-green); font-weight: 700;">O que você encontra aqui?</h2>
+                        <ul class="card-text text-start" style="color: var(--text-secondary); max-width: 340px; margin: 0 auto;">
+                            <li><strong>Artigos e tutoriais</strong> sobre programação, frameworks modernos e boas práticas.</li>
+                            <li><strong>Dicas de design</strong> para criar experiências digitais incríveis.</li>
+                            <li><strong>Conteúdo sobre IA</strong> e como aplicar inteligência artificial em projetos reais.</li>
+                            <li><strong>Novidades e tendências</strong> do mundo tech, mobile e web.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 text-center" style="background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border-color); box-shadow: 0 4px 24px rgba(0,0,0,0.10);">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <div style="font-size:2.5rem; color:var(--primary-green); margin-bottom: 1rem;">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h2 class="card-title mb-3" style="color: var(--primary-green); font-weight: 700;">Missão</h2>
+                        <p class="card-text" style="color: var(--text-secondary);">
+                            Democratizar o acesso ao conhecimento tecnológico, tornando-o acessível, prático e inspirador para todos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card h-100 text-center" style="background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border-color); box-shadow: 0 4px 24px rgba(0,0,0,0.10);">
+                    <div class="card-body d-flex flex-column align-items-center justify-content-center">
+                        <div style="font-size:2.5rem; color:var(--primary-green); margin-bottom: 1rem;">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h2 class="card-title mb-3" style="color: var(--primary-green); font-weight: 700;">Vamos conversar?</h2>
+                        <p class="card-text" style="color: var(--text-secondary);">
+                            Fique à vontade para entrar em contato, sugerir temas ou apenas bater um papo sobre tecnologia!
+                        </p>
+                        <a href="mailto:contato@sanderx.com" class="btn btn-talk mt-3 mx-auto" style="display:block; width: fit-content; min-width: 140px; text-align: center; font-size: 1rem; padding: 0.5rem 1.5rem;">
+                            Fale comigo
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-brand">SanderX</div>
+                    <p class="text-secondary">Compartilhando conhecimento e inspiração sobre tecnologia e desenvolvimento.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Blog</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="index2.html#blog" style="color: var(--text-secondary); text-decoration: none;">Últimos Posts</a></li>
+                        <li><a href="index2.html#categorias" style="color: var(--text-secondary); text-decoration: none;">Categorias</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Tags</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Recursos</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Tutoriais</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Downloads</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Templates</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Suporte</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">FAQ</a></li>
+                        <li><a href="index2.html#contato" style="color: var(--text-secondary); text-decoration: none;">Contato</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Legal</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Privacidade</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Termos</a></li>
+                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr style="border-color: var(--border-color); margin: 2rem 0 1rem;">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p style="color: var(--text-secondary); margin: 0;">&copy; 2025 SanderX. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p style="color: var(--text-secondary); margin: 0;">Feito com <span style="color: var(--primary-green);">♥</span> e muito código</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Theme toggle functionality (igual ao index)
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('i');
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            if (savedTheme === 'light') {
+                themeIcon.className = 'fas fa-sun';
+                document.documentElement.style.setProperty('--primary-green', '#00cc6a');
+                document.documentElement.style.setProperty('--dark-bg', '#ffffff');
+                document.documentElement.style.setProperty('--card-bg', '#f8f9fa');
+                document.documentElement.style.setProperty('--text-primary', '#212529');
+                document.documentElement.style.setProperty('--text-secondary', '#6c757d');
+                document.documentElement.style.setProperty('--border-color', '#dee2e6');
+            }
+        }
+        themeToggle.addEventListener('click', function() {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            if (newTheme === 'light') {
+                themeIcon.className = 'fas fa-sun';
+                document.documentElement.style.setProperty('--primary-green', '#00cc6a');
+                document.documentElement.style.setProperty('--dark-bg', '#ffffff');
+                document.documentElement.style.setProperty('--card-bg', '#f8f9fa');
+                document.documentElement.style.setProperty('--text-primary', '#212529');
+                document.documentElement.style.setProperty('--text-secondary', '#6c757d');
+                document.documentElement.style.setProperty('--border-color', '#dee2e6');
+            } else {
+                themeIcon.className = 'fas fa-moon';
+                document.documentElement.style.setProperty('--primary-green', '#00ff88');
+                document.documentElement.style.setProperty('--dark-bg', '#0a0a0a');
+                document.documentElement.style.setProperty('--card-bg', '#1a1a1a');
+                document.documentElement.style.setProperty('--text-primary', '#ffffff');
+                document.documentElement.style.setProperty('--text-secondary', '#b0b0b0');
+                document.documentElement.style.setProperty('--border-color', '#2a2a2a');
+            }
+        });
+        // Mobile menu improvements
+        const navbarToggler = document.querySelector('.navbar-toggler');
+        const navbarCollapse = document.querySelector('.navbar-collapse');
+        if (navbarToggler && navbarCollapse) {
+            navbarToggler.addEventListener('click', function() {
+                const isExpanded = navbarCollapse.classList.contains('show');
+                if (isExpanded) {
+                    navbarToggler.innerHTML = '<i class="fas fa-bars" style="color: var(--text-primary);"></i>';
+                } else {
+                    navbarToggler.innerHTML = '<i class="fas fa-times" style="color: var(--text-primary);"></i>';
+                }
+            });
+        }
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                const navbarToggler = document.querySelector('.navbar-toggler');
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    navbarCollapse.classList.remove('show');
+                    navbarToggler.innerHTML = '<i class="fas fa-bars" style="color: var(--text-primary);"></i>';
+                }
+            });
+        });
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
