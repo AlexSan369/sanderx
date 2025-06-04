@@ -7,203 +7,24 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-green: #00ff88;
-            --dark-bg: #0a0a0a;
-            --card-bg: #1a1a1a;
-            --text-primary: #ffffff;
-            --text-secondary: #b0b0b0;
-            --border-color: #2a2a2a;
-        }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--dark-bg);
-            color: var(--text-primary);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-        .navbar {
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-color);
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        .navbar-brand {
-            font-weight: 800;
-            font-size: 1.5rem;
-            color: var(--primary-green) !important;
-            text-decoration: none;
-        }
-        .navbar-nav .nav-link {
-            color: var(--text-primary) !important;
-            font-weight: 500;
-            margin: 0 0.5rem;
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        .navbar-nav .nav-link:hover {
-            color: var(--primary-green) !important;
-        }
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-green);
-            transition: width 0.3s ease;
-        }
-        .navbar-nav .nav-link:hover::after {
-            width: 100%;
-        }
-        .btn-talk {
-            background: var(--primary-green);
-            color: var(--dark-bg);
-            border: none;
-            padding: 0.5rem 1.5rem;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .btn-talk:hover {
-            background: #00cc6a;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 255, 136, 0.3);
-        }
-        .theme-toggle {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-        }
-        .theme-toggle:hover {
-            background: var(--primary-green);
-            color: var(--dark-bg);
-        }
-        .blog-section {
-            padding: 120px 0 80px;
-            background: var(--dark-bg);
-        }
-        .section-title {
-            font-weight: 700;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-        }
-        .blog-card {
-            background: var(--card-bg);
-            border-radius: 20px;
-            padding: 0;
-            border: 1px solid var(--border-color);
-            transition: all 0.3s ease;
-            overflow: hidden;
-            height: 100%;
-        }
-        .blog-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-            border-color: var(--primary-green);
-        }
-        .blog-image {
-            width: 100%;
-            height: 200px;
-            background: linear-gradient(45deg, var(--primary-green), #00cc6a);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3rem;
-            color: var(--dark-bg);
-        }
-        .blog-content {
-            padding: 1.5rem;
-        }
-        .blog-meta {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1rem;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-        }
-        .blog-title {
-            font-weight: 600;
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            color: var(--text-primary);
-        }
-        .blog-excerpt {
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
-        .read-more {
-            color: var(--primary-green);
-            text-decoration: none;
-            font-weight: 500;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-        }
-        .read-more:hover {
-            color: var(--primary-green);
-            transform: translateX(5px);
-        }
-        .social-link i {
-            font-size: 1.5rem;
-            transition: color 0.3s, text-shadow 0.3s;
-        }
-
-        .social-link:hover i {
-            color: var(--primary-green);
-            text-shadow: 0 0 8px var(--primary-green), 0 0 16px var(--primary-green), 0 0 24px var(--primary-green);
-            filter: brightness(1.3);
-        }
-        @media (max-width: 768px) {
-            .blog-section {
-                padding: 100px 0 60px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/cssAuxiliar.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <a class="navbar-brand" href="index.html"> Sander <i class="fas fa-code"></i></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border: none; background: var(--card-bg);">
-                <i class="fas fa-bars" style="color: var(--text-primary);"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="blog.html">Blog</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#categorias">Categorias</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="sobre.html">Sobre</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="contato.html">Contato</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#categorias">Categorias</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
                 </ul>
                 <div class="d-flex align-items-center gap-3">
                     <button class="theme-toggle" id="themeToggle">
@@ -218,59 +39,35 @@
     <!-- Blog Posts Section -->
     <section class="blog-section" id="blog">
         <div class="container">
-            <h2 class="section-title fade-in-up">Todas as <span style="color: var(--primary-green);">Postagens</span></h2>
+            <h2 class="section-title fade-in-up">Todas as <span class="text-primary-green">Postagens</span></h2>
             <div class="row g-4 justify-content-center">
                 <!-- Sidebar à esquerda -->
                 <aside class="col-lg-3 d-none d-lg-block">
-                    <div class="card" style="background: var(--card-bg); border-radius: 16px; border: 1px solid var(--border-color); box-shadow: 0 2px 12px rgba(0,0,0,0.08);">
+                    <div class="card sidebar-card">
                         <div class="card-body">
-                            <h5 style="color: var(--primary-green); font-weight:700; margin-bottom:1rem; text-align:left;">
+                            <h5 class="sidebar-title">
                                 <i class="fas fa-folder-open"></i> Categorias
                             </h5>
-                            <ul style="list-style:none; padding-left:0; color:var(--text-secondary); font-size:1rem; text-align:left;">
-                                <li style="margin-bottom: 0.5rem;">
-                                    <a href="#react" style="color:var(--text-primary); text-decoration:none; display:inline-block;">
-                                        <i class="fab fa-react"></i> React
-                                    </a>
-                                </li>
-                                <li style="margin-bottom: 0.5rem;">
-                                    <a href="#design" style="color:var(--text-primary); text-decoration:none; display:inline-block;">
-                                        <i class="fas fa-palette"></i> Design
-                                    </a>
-                                </li>
-                                <li style="margin-bottom: 0.5rem;">
-                                    <a href="#ia" style="color:var(--text-primary); text-decoration:none; display:inline-block;">
-                                        <i class="fas fa-robot"></i> IA
-                                    </a>
-                                </li>
-                                <li style="margin-bottom: 0.5rem;">
-                                    <a href="#mobile" style="color:var(--text-primary); text-decoration:none; display:inline-block;">
-                                        <i class="fas fa-mobile-alt"></i> Mobile
-                                    </a>
-                                </li>
-                                <li style="margin-bottom: 0.5rem;">
-                                    <a href="#backend" style="color:var(--text-primary); text-decoration:none; display:inline-block;">
-                                        <i class="fas fa-database"></i> Backend
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#seguranca" style="color:var(--text-primary); text-decoration:none; display:inline-block;">
-                                        <i class="fas fa-shield-alt"></i> Segurança
-                                    </a>
-                                </li>
+                            <ul class="sidebar-list">
+                                <li><a href="#react"><i class="fab fa-react"></i> React</a></li>
+                                <li><a href="#design"><i class="fas fa-palette"></i> Design</a></li>
+                                <li><a href="#ia"><i class="fas fa-robot"></i> IA</a></li>
+                                <li><a href="#mobile"><i class="fas fa-mobile-alt"></i> Mobile</a></li>
+                                <li><a href="#backend"><i class="fas fa-database"></i> Backend</a></li>
+                                <li><a href="#seguranca"><i class="fas fa-shield-alt"></i> Segurança</a></li>
                             </ul>
-                            <hr style="border-color:var(--border-color); margin:1.5rem 0;">
-                            <h5 style="color: var(--primary-green); font-weight:700; margin-bottom:1rem; text-align:left;">
+                            <hr class="sidebar-divider">
+                            <h5 class="sidebar-title">
                                 <i class="fas fa-tags"></i> Assuntos
                             </h5>
-                            <div style="display:flex; flex-wrap:wrap; gap:0.5rem; justify-content:flex-start;">
-                                <a href="#javascript" class="badge rounded-pill" style="background:var(--primary-green); color:var(--dark-bg); text-decoration:none;">JavaScript</a>
-                                <a href="#ux" class="badge rounded-pill" style="background:var(--primary-green); color:var(--dark-bg); text-decoration:none;">UX</a>
-                                <a href="#node" class="badge rounded-pill" style="background:var(--primary-green); color:var(--dark-bg); text-decoration:none;">Node.js</a>
-                                <a href="#pwa" class="badge rounded-pill" style="background:var(--primary-green); color:var(--dark-bg); text-decoration:none;">PWA</a>
-                                <a href="#css" class="badge rounded-pill" style="background:var(--primary-green); color:var(--dark-bg); text-decoration:none;">CSS</a>
-                                <a href="#api" class="badge rounded-pill" style="background:var(--primary-green); color:var(--dark-bg); text-decoration:none;">API</a>
-                                <a href="#seguranca" class="badge rounded-pill" style="background:var(--primary-green); color:var(--dark-bg); text-decoration:none;">Segurança</a>
+                            <div class="sidebar-tags">
+                                <a href="#javascript" class="badge rounded-pill">JavaScript</a>
+                                <a href="#ux" class="badge rounded-pill">UX</a>
+                                <a href="#node" class="badge rounded-pill">Node.js</a>
+                                <a href="#pwa" class="badge rounded-pill">PWA</a>
+                                <a href="#css" class="badge rounded-pill">CSS</a>
+                                <a href="#api" class="badge rounded-pill">API</a>
+                                <a href="#seguranca" class="badge rounded-pill">Segurança</a>
                             </div>
                         </div>
                     </div>
@@ -278,6 +75,7 @@
                 <!-- Cards centralizados -->
                 <div class="col-lg-9 d-flex justify-content-center">
                     <div class="row g-4 justify-content-center w-100">
+                        <!-- Exemplo de card -->
                         <div class="col-lg-4 col-md-6 fade-in-up">
                             <article class="blog-card" id="react">
                                 <div class="blog-image">
@@ -381,9 +179,10 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer class="footer mt-5">
         <div class="container text-center">
-            <div class="footer-brand" style="color: var(--primary-green); font-weight: 800; font-size: 1.5rem;">TechBlog</div>
+            <div class="footer-brand">SanderX</div>
             <p class="text-secondary">Compartilhando conhecimento e inspiração sobre tecnologia e desenvolvimento.</p>
             <div class="social-links d-flex justify-content-center gap-3 mb-3">
                 <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
@@ -391,53 +190,12 @@
                 <a href="#" class="social-link"><i class="fab fa-github"></i></a>
                 <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
             </div>
-            <hr style="border-color: var(--border-color); margin: 2rem 0 1rem;">
-            <p style="color: var(--text-secondary); margin: 0;">&copy; 2025 SanderX. Todos os direitos reservados.</p>
-            <p style="color: var(--text-secondary); margin: 0;">Feito com <span style="color: var(--primary-green);">♥</span> e muito código</p>
+            <hr class="footer-divider">
+            <p class="footer-copyright">&copy; 2025 SanderX. Todos os direitos reservados.</p>
+            <p class="footer-made">Feito com <span style="color: var(--primary-green);">♥</span> e muito código</p>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('themeToggle');
-        const themeIcon = themeToggle.querySelector('i');
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme) {
-            document.documentElement.setAttribute('data-theme', savedTheme);
-            if (savedTheme === 'light') {
-                themeIcon.className = 'fas fa-sun';
-                document.documentElement.style.setProperty('--primary-green', '#00cc6a');
-                document.documentElement.style.setProperty('--dark-bg', '#ffffff');
-                document.documentElement.style.setProperty('--card-bg', '#f8f9fa');
-                document.documentElement.style.setProperty('--text-primary', '#212529');
-                document.documentElement.style.setProperty('--text-secondary', '#6c757d');
-                document.documentElement.style.setProperty('--border-color', '#dee2e6');
-            }
-        }
-        themeToggle.addEventListener('click', function() {
-            const currentTheme = document.documentElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-            if (newTheme === 'light') {
-                themeIcon.className = 'fas fa-sun';
-                document.documentElement.style.setProperty('--primary-green', '#00cc6a');
-                document.documentElement.style.setProperty('--dark-bg', '#ffffff');
-                document.documentElement.style.setProperty('--card-bg', '#f8f9fa');
-                document.documentElement.style.setProperty('--text-primary', '#212529');
-                document.documentElement.style.setProperty('--text-secondary', '#6c757d');
-                document.documentElement.style.setProperty('--border-color', '#dee2e6');
-            } else {
-                themeIcon.className = 'fas fa-moon';
-                document.documentElement.style.setProperty('--primary-green', '#00ff88');
-                document.documentElement.style.setProperty('--dark-bg', '#0a0a0a');
-                document.documentElement.style.setProperty('--card-bg', '#1a1a1a');
-                document.documentElement.style.setProperty('--text-primary', '#ffffff');
-                document.documentElement.style.setProperty('--text-secondary', '#b0b0b0');
-                document.documentElement.style.setProperty('--border-color', '#2a2a2a');
-            }
-        });
-    </script>
 </body>
 </html>

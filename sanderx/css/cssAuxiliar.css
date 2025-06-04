@@ -1,0 +1,151 @@
+/* Inline styles extraídos do index.html */
+
+/* Navbar toggler */
+.navbar-toggler {
+    border: none;
+    background: var(--card-bg);
+}
+
+/* Navbar toggler icon */
+.navbar-toggler .fas.fa-bars,
+.navbar-toggler .fas.fa-times {
+    color: var(--text-primary);
+}
+
+/* Badge Olá */
+.badge {
+    background: var(--primary-green);
+    color: var(--dark-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 600;
+}
+
+/* Hero image circle */
+.hero-image-circle {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, var(--primary-green), #00cc6a);
+    border-radius: 50%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    color: var(--dark-bg);
+}
+
+/* Newsletter Section */
+.newsletter-section {
+    background: var(--card-bg);
+    padding: 4rem 0;
+    margin: 4rem 0;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.newsletter-section h3 {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+
+.newsletter-section h2 {
+    margin-bottom: 1rem;
+}
+
+.newsletter-section p {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+.newsletter-input-group {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.newsletter-input {
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border-color);
+    background: var(--dark-bg);
+    color: var(--text-primary);
+}
+
+.newsletter-btn {
+    background: var(--primary-green);
+    color: var(--dark-bg);
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+}
+
+/* Scroll to top button */
+#scrollToTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: var(--primary-green);
+    color: var(--dark-bg);
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+    box-shadow: 0 4px 20px rgba(0, 255, 136, 0.3);
+}
+
+/* Search container */
+.search-container {
+    position: relative;
+    margin: 2rem 0;
+}
+
+#searchInput {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 25px;
+    border: 1px solid var(--border-color);
+    background: var(--card-bg);
+    color: var(--text-primary);
+    font-size: 1rem;
+}
+
+.search-container .fa-search {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+}
+
+/* Parcerias Section */
+.parcerias-section {
+    background: var(--card-bg);
+    padding: 3rem 0;
+    border-radius: 20px;
+    text-align: center;
+    margin: 3rem 0 2rem 0;
+}
+.parcerias-title {
+    color: var(--primary-green);
+    margin-bottom: 1rem;
+}
+.parcerias-subtitle {
+    margin-bottom: 1rem;
+}
+.parcerias-desc {
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+.parcerias-animation {
+    margin: 0 auto;
+    width: 160px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
