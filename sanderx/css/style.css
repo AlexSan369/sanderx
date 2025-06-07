@@ -460,6 +460,11 @@ a {
     background: linear-gradient(135deg, #111 0%, var(--dark-bg) 100%);
 }
 
+.categories-section span,
+.blog-section span {
+    color: var(--primary-green);
+}
+
 .category-card {
     background: var(--card-bg);
     border-radius: 15px;
@@ -562,6 +567,29 @@ a {
     font-size: 1.5rem;
     color: var(--primary-green);
     margin-bottom: 1rem;
+}
+
+.footer h5 {
+    color: var(--primary-green);
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+.footer ul{
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1.5rem;
+}
+
+.footer hr {
+    border-color: var(--border-color); 
+    margin: 2rem 0 1rem;
+}
+
+.footer p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 .social-links {

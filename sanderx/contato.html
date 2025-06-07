@@ -11,14 +11,16 @@
     <link rel="stylesheet" href="css/cssAuxiliar.css">
 </head>
 <body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"> Sander <i class="fas fa-code"></i></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
-                style="border: none; background: var(--card-bg);">
-                <i class="fas fa-bars" style="color: var(--text-primary);"></i>
+            <a class="navbar-brand" href="#"> Sander <i class="fas fa-code"></i></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
@@ -26,23 +28,23 @@
                         <a class="nav-link" href="index.html">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#blog">Blog</a>
+                        <a class="nav-link" href="blog.html">Blog</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html#categorias">Categorias</a>
+                        <a class="nav-link" href="#categorias">Categorias</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="sobre.html">Sobre</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="contato.html">Contato</a>
+                        <a class="nav-link" href="contato.html">Contato</a>
                     </li>
                 </ul>
                 <div class="d-flex align-items-center gap-3">
                     <button class="theme-toggle" id="themeToggle">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <a href="mailto:contato@sanderx.com" class="btn btn-talk">Vamos Conversar</a>
+                    <button class="btn btn-talk">Vamos Conversar</button>
                 </div>
             </div>
         </div>
@@ -134,47 +136,53 @@
                 <div class="col-lg-4">
                     <div class="footer-brand">SanderX</div>
                     <p class="text-secondary">Compartilhando conhecimento e inspiração sobre tecnologia e desenvolvimento.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/alex-sander-neves/" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/AlexSan369" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/sand.eeer" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
                 </div>
                 <div class="col-lg-2 col-md-6">
-                    <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Blog</h5>
-                    <ul style="list-style: none; padding: 0;">
-                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Últimos Posts</a></li>
-                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Categorias</a></li>
-                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Tags</a></li>
+                    <h5>Blog</h5>
+                    <ul>
+                        <li><a href="#">Últimos Posts</a></li>
+                        <li><a href="#">Categorias</a></li>
+                        <li><a href="#">Tags</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6">
-                    <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Recursos</h5>
-                    <ul style="list-style: none; padding: 0;">
-                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Tutoriais</a></li>
-                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Downloads</a></li>
-                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Templates</a></li>
+                    <h5>Recursos</h5>
+                    <ul>
+                        <li><a href="#">Tutoriais</a></li>
+                        <li><a href="#">Downloads</a></li>
+                        <li><a href="#">Templates</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6">
-                    <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Suporte</h5>
-                    <ul style="list-style: none; padding: 0;">
-                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">FAQ</a></li>
-                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Contato</a></li>
-                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Feedback</a></li>
+                    <h5>Suporte</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="#">Feedback</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-6">
-                    <h5 style="color: var(--primary-green); margin-bottom: 1rem;">Legal</h5>
-                    <ul style="list-style: none; padding: 0;">
-                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Privacidade</a></li>
-                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Termos</a></li>
-                        <li><a href="#" style="color: var(--text-secondary); text-decoration: none;">Cookies</a></li>
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Privacidade</a></li>
+                        <li><a href="#">Termos</a></li>
+                        <li><a href="#">Cookies</a></li>
                     </ul>
                 </div>
             </div>
-            <hr style="border-color: var(--border-color); margin: 2rem 0 1rem;">
+            <hr>
             <div class="row align-items-center">
                 <div class="col-md-6">
-                    <p style="color: var(--text-secondary); margin: 0;">&copy; 2025 TechBlog. Todos os direitos reservados.</p>
+                    <p>&copy; 2025 SanderX. Todos os direitos reservados.</p>
                 </div>
                 <div class="col-md-6 text-md-end">
-                    <p style="color: var(--text-secondary); margin: 0;">Feito com <span style="color: var(--primary-green);">♥</span> e muito código</p>
+                    <p>Feito com <span>♥</span> e muito código</p>
                 </div>
             </div>
         </div>
@@ -212,46 +220,6 @@
         this.reset();
     });
 
-    // Theme toggle (igual ao index)
-    const themeToggle = document.getElementById('themeToggle');
-    const themeIcon = themeToggle.querySelector('i');
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme) {
-        document.documentElement.setAttribute('data-theme', savedTheme);
-        if (savedTheme === 'light') {
-            themeIcon.className = 'fas fa-sun';
-            document.documentElement.style.setProperty('--primary-green', '#00cc6a');
-            document.documentElement.style.setProperty('--dark-bg', '#ffffff');
-            document.documentElement.style.setProperty('--card-bg', '#f8f9fa');
-            document.documentElement.style.setProperty('--text-primary', '#212529');
-            document.documentElement.style.setProperty('--text-secondary', '#6c757d');
-            document.documentElement.style.setProperty('--border-color', '#dee2e6');
-        }
-    }
-    themeToggle.addEventListener('click', function() {
-        const currentTheme = document.documentElement.getAttribute('data-theme');
-        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-        document.documentElement.setAttribute('data-theme', newTheme);
-        localStorage.setItem('theme', newTheme);
-        if (newTheme === 'light') {
-            themeIcon.className = 'fas fa-sun';
-            document.documentElement.style.setProperty('--primary-green', '#00cc6a');
-            document.documentElement.style.setProperty('--dark-bg', '#ffffff');
-            document.documentElement.style.setProperty('--card-bg', '#f8f9fa');
-            document.documentElement.style.setProperty('--text-primary', '#212529');
-            document.documentElement.style.setProperty('--text-secondary', '#6c757d');
-            document.documentElement.style.setProperty('--border-color', '#dee2e6');
-        } else {
-            themeIcon.className = 'fas fa-moon';
-            document.documentElement.style.setProperty('--primary-green', '#00ff88');
-            document.documentElement.style.setProperty('--dark-bg', '#0a0a0a');
-            document.documentElement.style.setProperty('--card-bg', '#1a1a1a');
-            document.documentElement.style.setProperty('--text-primary', '#ffffff');
-            document.documentElement.style.setProperty('--text-secondary', '#b0b0b0');
-            document.documentElement.style.setProperty('--border-color', '#2a2a2a');
-        }
-    });
-
     // Animação simples para logos de parceiros "flutuando"
     const parceriasAnim = document.getElementById('parcerias-animation');
     if (parceriasAnim) {
@@ -268,5 +236,6 @@
         }, 900);
     }
     </script>
+    <script src="js/script.js"></script>
 </body>
 </html>

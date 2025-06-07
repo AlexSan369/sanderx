@@ -11,26 +11,40 @@
     <link rel="stylesheet" href="css/cssAuxiliar.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader"></div>
+    </div>
+    
+   <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="index.html"> Sander <i class="fas fa-code"></i></a>
+            <a class="navbar-brand" href="#"> Sander <i class="fas fa-code"></i></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html#home">Home</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
-                    <li class="nav-item"><a class="nav-link" href="index.html#categorias">Categorias</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sobre.html">Sobre</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contato.html">Contato</a></li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="blog.html">Blog</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#categorias">Categorias</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
                 </ul>
                 <div class="d-flex align-items-center gap-3">
                     <button class="theme-toggle" id="themeToggle">
                         <i class="fas fa-moon"></i>
                     </button>
-                    <a href="mailto:contato@sanderx.com" class="btn btn-talk">Vamos Conversar</a>
+                    <button class="btn btn-talk">Vamos Conversar</button>
                 </div>
             </div>
         </div>
@@ -39,7 +53,7 @@
     <!-- Blog Posts Section -->
     <section class="blog-section" id="blog">
         <div class="container">
-            <h2 class="section-title fade-in-up">Todas as <span class="text-primary-green">Postagens</span></h2>
+            <h2 class="section-title fade-in-up">Todas as <span>Postagens</span></h2>
             <div class="row g-4 justify-content-center">
                 <!-- Sidebar à esquerda -->
                 <aside class="col-lg-3 d-none d-lg-block">
@@ -180,22 +194,65 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer mt-5">
-        <div class="container text-center">
-            <div class="footer-brand">SanderX</div>
-            <p class="text-secondary">Compartilhando conhecimento e inspiração sobre tecnologia e desenvolvimento.</p>
-            <div class="social-links d-flex justify-content-center gap-3 mb-3">
-                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <div class="footer-brand">SanderX</div>
+                    <p class="text-secondary">Compartilhando conhecimento e inspiração sobre tecnologia e desenvolvimento.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" target="_blank"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.linkedin.com/in/alex-sander-neves/" class="social-link" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/AlexSan369" class="social-link" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://instagram.com/sand.eeer" class="social-link" target="_blank"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Blog</h5>
+                    <ul>
+                        <li><a href="#">Últimos Posts</a></li>
+                        <li><a href="#">Categorias</a></li>
+                        <li><a href="#">Tags</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Recursos</h5>
+                    <ul>
+                        <li><a href="#">Tutoriais</a></li>
+                        <li><a href="#">Downloads</a></li>
+                        <li><a href="#">Templates</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Suporte</h5>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="#">Feedback</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-6">
+                    <h5>Legal</h5>
+                    <ul>
+                        <li><a href="#">Privacidade</a></li>
+                        <li><a href="#">Termos</a></li>
+                        <li><a href="#">Cookies</a></li>
+                    </ul>
+                </div>
             </div>
-            <hr class="footer-divider">
-            <p class="footer-copyright">&copy; 2025 SanderX. Todos os direitos reservados.</p>
-            <p class="footer-made">Feito com <span style="color: var(--primary-green);">♥</span> e muito código</p>
+            <hr>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p>&copy; 2025 SanderX. Todos os direitos reservados.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Feito com <span>♥</span> e muito código</p>
+                </div>
+            </div>
         </div>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
